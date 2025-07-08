@@ -1,42 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><center><h1><hr size="3" noshade>SMD OWAIS</h1>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMD PERSONAL SITE</title></center>
+    <title>SMD OWAIS - Personal Site</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <table>
-        <tr>
-        <td><img src="smd.png.png" alt="SMD"></td>
-        <td><p><strong><i>Hey there it SMD OWAIS , I am cse student at mits ,I am freelancer with group of 4 ppl  we are actually runing as angcey at many working site,i am really intrested to grow gobal wise as well as local market, My aim is to be the largest cap industry in my era and my farovite topics for talks are  geoploicits ,stock market, suprallity </i></strong></p></td>
-    </tr>
-    <tr>
-        <td>
-            <h1><b><strong>SHAIKMHOMMEDOWAIS</b></strong></h1>
-        </td>
-    </tr>
-    </table>       
-        <br>
-        <p><hr size="5" noshade><h1><em>EDUCATION</em></h1>
-            <hr size="5" noshade>
-        <strong><i><ol><li> i am have done my schooling of grade 10 with 86 % in icse(2018-2019)<a href="https://www.facebook.com/pages/category/Local-business/Greenvalley-school-515879645246648/">scholling</a></li>
-        <li>my higher secondary schooling of 12 grade from nitte with 70% in csbe(2019-2021)<a href="https://nis.ac.in/">scholling</a></li>
-        <li>for now i am in my b.tech frist year cse branch(2022-2026)</li><a href="https://www.mits.ac.in/">b.tech</a></ol></i></strong></p>
-        <p><h1><a href="hobbies.html">HOBBIES</a></h1>
-            <h1><em><a href="conactme.html">conact</a></em></h1>
-        </p><br>
-        <hr size="3" noshade><strong><h2>SKILLS</h2></strong><hr size="3" noshade>
-        <table>
-            <tr>
-                <td>stocktader<br></td>
-                <br><td>webdevelpoer</td>
-            </tr>
-            <tr>
-                <td>andiordevelpoer</td><br>
-                <td>blockchain</td>
-            </tr>
-        </table>        
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="hobbies.html">Hobbies</a>
+                <a href="conactme.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>SMD OWAIS</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="profile-section">
+                <img src="smd.png.png" alt="SMD OWAIS" class="profile-image">
+                <div class="profile-text">
+                    <h2>SHAIK MOHAMMED OWAIS</h2>
+                    <p><strong>Hey there, I'm SMD OWAIS, a CSE student at MITS. I'm a freelancer working with a group of 4 people - we actually run as an agency at many working sites. I'm really interested in growing globally as well as in the local market. My aim is to be the largest cap industry in my era and my favorite topics for talks are geopolitics, stock market, and spirituality.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2 class="section-title">EDUCATION</h2>
+            <div class="card">
+                <ol>
+                    <li>I have done my schooling of grade 10 with 86% in ICSE (2018-2019) - <a href="https://www.facebook.com/pages/category/Local-business/Greenvalley-school-515879645246648/">Greenvalley School</a></li>
+                    <li>My higher secondary schooling of 12th grade from Nitte with 70% in CBSE (2019-2021) - <a href="https://nis.ac.in/">Nitte School</a></li>
+                    <li>Currently in my B.Tech first year CSE branch (2022-2026) - <a href="https://www.mits.ac.in/">MITS</a></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title">SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Stock Trader</div>
+                <div class="skill-item">Web Developer</div>
+                <div class="skill-item">Android Developer</div>
+                <div class="skill-item">Blockchain</div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
