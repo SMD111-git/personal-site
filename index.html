@@ -1,42 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><center><h1><hr size="3" noshade>SMD OWAIS</h1>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMD PERSONAL SITE</title></center>
+    <title>SMD Owais - Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <table>
-        <tr>
-        <td><img src="smd.png.png" alt="SMD"></td>
-        <td><p><strong><i>Hey there it SMD OWAIS , I am cse student at mits ,I am freelancer with group of 4 ppl  we are actually runing as angcey at many working site,i am really intrested to grow gobal wise as well as local market, My aim is to be the largest cap industry in my era and my farovite topics for talks are  geoploicits ,stock market, suprallity </i></strong></p></td>
-    </tr>
-    <tr>
-        <td>
-            <h1><b><strong>SHAIKMHOMMEDOWAIS</b></strong></h1>
-        </td>
-    </tr>
-    </table>       
-        <br>
-        <p><hr size="5" noshade><h1><em>EDUCATION</em></h1>
-            <hr size="5" noshade>
-        <strong><i><ol><li> i am have done my schooling of grade 10 with 86 % in icse(2018-2019)<a href="https://www.facebook.com/pages/category/Local-business/Greenvalley-school-515879645246648/">scholling</a></li>
-        <li>my higher secondary schooling of 12 grade from nitte with 70% in csbe(2019-2021)<a href="https://nis.ac.in/">scholling</a></li>
-        <li>for now i am in my b.tech frist year cse branch(2022-2026)</li><a href="https://www.mits.ac.in/">b.tech</a></ol></i></strong></p>
-        <p><h1><a href="hobbies.html">HOBBIES</a></h1>
-            <h1><em><a href="conactme.html">conact</a></em></h1>
-        </p><br>
-        <hr size="3" noshade><strong><h2>SKILLS</h2></strong><hr size="3" noshade>
-        <table>
-            <tr>
-                <td>stocktader<br></td>
-                <br><td>webdevelpoer</td>
-            </tr>
-            <tr>
-                <td>andiordevelpoer</td><br>
-                <td>blockchain</td>
-            </tr>
-        </table>        
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#about" class="logo">SMD OWAIS</a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link" data-target="about">About Me</a></li>
+                <li><a href="#projects" class="nav-link" data-target="projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- About Me Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="about-content fade-in">
+                    <div class="about-image">
+                        <img src="smd.png.png" alt="SMD Owais" class="profile-image">
+                    </div>
+                    <div class="about-text">
+                        <h1>Shaik Mohammed Owais</h1>
+                        <h2>Computer Science Student & Freelancer</h2>
+                        <p>
+                            Hey there! I'm SMD Owais, a passionate Computer Science student at MITS. 
+                            I'm a freelancer working with a dynamic team of 4 people, operating as an 
+                            agency across multiple platforms. My goal is to grow both globally and in 
+                            the local market, with the ambition to build the largest cap industry in my era.
+                        </p>
+                        <p>
+                            I'm particularly interested in discussing geopolitics, stock market trends, 
+                            and spirituality. Currently pursuing my B.Tech in CSE (2022-2026), I bring 
+                            both technical expertise and business acumen to every project.
+                        </p>
+                        
+                        <h3>Education</h3>
+                        <ul>
+                            <li>B.Tech CSE at <a href="https://www.mits.ac.in/" target="_blank">MITS</a> (2022-2026)</li>
+                            <li>Higher Secondary (Grade 12) - 70% in CSBE from <a href="https://nis.ac.in/" target="_blank">Nitte</a> (2019-2021)</li>
+                            <li>Secondary School (Grade 10) - 86% in ICSE from <a href="https://www.facebook.com/pages/category/Local-business/Greenvalley-school-515879645246648/" target="_blank">Greenvalley School</a> (2018-2019)</li>
+                        </ul>
+                        
+                        <h3>Skills & Interests</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Stock Trading</span>
+                            <span class="skill-tag">Web Development</span>
+                            <span class="skill-tag">Android Development</span>
+                            <span class="skill-tag">Blockchain</span>
+                            <span class="skill-tag">Geopolitics</span>
+                            <span class="skill-tag">Spirituality</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section-title fade-in">My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card fade-in">
+                        <h3>Freelance Agency Platform</h3>
+                        <p>
+                            A comprehensive platform for managing freelance projects with my team. 
+                            Features include project tracking, client communication, and payment processing.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Web Development</span>
+                            <span class="project-tag">Team Management</span>
+                            <span class="project-tag">Business</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card fade-in">
+                        <h3>Stock Market Analysis Tool</h3>
+                        <p>
+                            A trading analysis application that helps in making informed decisions 
+                            in the stock market. Includes real-time data and predictive analytics.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Finance</span>
+                            <span class="project-tag">Data Analysis</span>
+                            <span class="project-tag">Trading</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card fade-in">
+                        <h3>Mobile App Development</h3>
+                        <p>
+                            Android applications focusing on user experience and modern design principles. 
+                            Specialized in creating apps that solve real-world problems.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Mobile</span>
+                            <span class="project-tag">UI/UX</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card fade-in">
+                        <h3>Blockchain Solutions</h3>
+                        <p>
+                            Exploring decentralized technologies and smart contract development. 
+                            Working on innovative blockchain applications for various industries.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Blockchain</span>
+                            <span class="project-tag">Cryptocurrency</span>
+                            <span class="project-tag">Smart Contracts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title fade-in">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info fade-in">
+                        <h3>Let's Connect</h3>
+                        <p>
+                            I'm always interested in discussing new opportunities, collaborations, 
+                            or just having a conversation about technology, geopolitics, or the stock market.
+                        </p>
+                        <p>
+                            Whether you're looking for freelance services, want to discuss a project, 
+                            or simply want to connect, feel free to reach out!
+                        </p>
+                        
+                        <div class="social-links">
+                            <a href="mailto:owaissmd33@gmail.com" class="social-link" title="Email">
+                                📧
+                            </a>
+                            <a href="https://www.linkedin.com/in/smd-owais-7703b7245" class="social-link" title="LinkedIn" target="_blank">
+                                💼
+                            </a>
+                            <a href="https://github.com/SMD111-git" class="social-link" title="GitHub" target="_blank">
+                                🐱
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form fade-in">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <button type="submit" id="submitBtn" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
