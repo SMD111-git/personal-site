@@ -1,4 +1,4 @@
-/* Personal Site - Modern CSS Styling */
+/* Personal Site - Terminal Theme Styling */
 
 /* Reset and base styles */
 * {
@@ -8,21 +8,79 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #f8f8f2;
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+/* Terminal Window Header */
+.terminal-header {
+    background: #2d2d2d;
+    border-bottom: 1px solid #444;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-button.close {
+    background: #ff5f56;
+}
+
+.terminal-button.minimize {
+    background: #ffbd2e;
+}
+
+.terminal-button.maximize {
+    background: #27ca3f;
+}
+
+.terminal-title {
+    font-size: 14px;
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.cursor::after {
+    content: '_';
+    color: #00ff00;
+    animation: blink 1s infinite;
+    font-weight: bold;
 }
 
 /* Navigation styles */
 .navbar {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #222;
     padding: 1rem 0;
     position: fixed;
-    top: 0;
+    top: 40px; /* Account for terminal header */
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #444;
 }
 
 .nav-container {
@@ -35,10 +93,15 @@ body {
 }
 
 .logo {
-    color: white;
+    color: #00ff00;
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
+}
+
+.logo::before {
+    content: '$ ';
+    color: #00ff00;
 }
 
 .nav-menu {
@@ -48,7 +111,7 @@ body {
 }
 
 .nav-link {
-    color: white;
+    color: #f8f8f2;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -56,12 +119,24 @@ body {
 }
 
 .nav-link:hover {
-    color: #ffd700;
+    color: #00ff00;
+}
+
+.nav-link::before {
+    content: '> ';
+    color: #666;
+}
+
+.nav-link:hover::before {
+    color: #00ff00;
 }
 
 /* Main content styles */
 main {
-    margin-top: 80px; /* Account for fixed navbar */
+    margin-top: 120px; /* Account for terminal header + navbar */
+    border: 2px solid #444;
+    border-top: none;
+    background: #1a1a1a;
 }
 
 .section {
@@ -69,6 +144,11 @@ main {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.section:last-child {
+    border-bottom: none;
 }
 
 .container {
@@ -79,7 +159,16 @@ main {
 
 /* About Me section */
 .about {
-    background: white;
+    background: #1a1a1a;
+}
+
+.about::before {
+    content: '$ cat about_me.txt';
+    display: block;
+    color: #00ff00;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
 }
 
 .about-content {
@@ -92,26 +181,70 @@ main {
 .profile-image {
     width: 100%;
     max-width: 300px;
-    border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 2px solid #444;
+    filter: contrast(1.2) brightness(0.9);
 }
 
 .about-text h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: #00ff00;
 }
 
 .about-text h2 {
     font-size: 1.2rem;
-    color: #667eea;
+    color: #f8f8f2;
     margin-bottom: 1rem;
+}
+
+.about-text h2::before {
+    content: '# ';
+    color: #666;
 }
 
 .about-text p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
     text-align: justify;
+    color: #f8f8f2;
+}
+
+.about-text h3 {
+    color: #00ff00;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text h3::before {
+    content: '## ';
+    color: #666;
+}
+
+.about-text ul {
+    margin-left: 2rem;
+}
+
+.about-text li {
+    margin-bottom: 0.5rem;
+    color: #f8f8f2;
+}
+
+.about-text li::before {
+    content: '- ';
+    color: #00ff00;
+    margin-left: -1rem;
+}
+
+.about-text a {
+    color: #00ff00;
+    text-decoration: underline;
+}
+
+.about-text a:hover {
+    color: #f8f8f2;
+    background: #00ff00;
+    padding: 2px 4px;
 }
 
 .skills-list {
@@ -122,24 +255,44 @@ main {
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: #333;
+    color: #00ff00;
     padding: 0.5rem 1rem;
-    border-radius: 25px;
+    border: 1px solid #00ff00;
+    border-radius: 0;
     font-size: 0.9rem;
     font-weight: 500;
 }
 
+.skill-tag::before {
+    content: '[';
+    color: #666;
+}
+
+.skill-tag::after {
+    content: ']';
+    color: #666;
+}
+
 /* Projects section */
 .projects {
-    background: #f8f9fa;
+    background: #1a1a1a;
+}
+
+.projects::before {
+    content: '$ ls -la ~/projects/';
+    display: block;
+    color: #00ff00;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #333;
+    color: #00ff00;
 }
 
 .projects-grid {
@@ -150,26 +303,34 @@ main {
 }
 
 .project-card {
-    background: white;
-    border-radius: 10px;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 0;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.project-card::before {
+    content: 'drwxr-xr-x ';
+    color: #666;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 1rem;
 }
 
 .project-card h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: #00ff00;
 }
 
 .project-card p {
-    color: #666;
+    color: #f8f8f2;
     margin-bottom: 1rem;
 }
 
@@ -181,16 +342,32 @@ main {
 }
 
 .project-tag {
-    background: #e9ecef;
-    color: #495057;
+    background: #333;
+    color: #f8f8f2;
     padding: 0.3rem 0.8rem;
-    border-radius: 15px;
+    border: 1px solid #666;
+    border-radius: 0;
     font-size: 0.8rem;
+}
+
+.project-tag::before {
+    content: '#';
+    color: #00ff00;
+    margin-right: 2px;
 }
 
 /* Contact section */
 .contact {
-    background: white;
+    background: #1a1a1a;
+}
+
+.contact::before {
+    content: '$ ./contact.sh';
+    display: block;
+    color: #00ff00;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
 }
 
 .contact-content {
@@ -202,12 +379,17 @@ main {
 .contact-info h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: #00ff00;
+}
+
+.contact-info h3::before {
+    content: '> ';
+    color: #666;
 }
 
 .contact-info p {
     margin-bottom: 1rem;
-    color: #666;
+    color: #f8f8f2;
 }
 
 .social-links {
@@ -219,23 +401,34 @@ main {
 .social-link {
     display: inline-block;
     padding: 0.8rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 50%;
+    background: #333;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    border-radius: 0;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    font-family: monospace;
 }
 
 .social-link:hover {
-    transform: scale(1.1);
+    background: #00ff00;
+    color: #1a1a1a;
 }
 
 /* Contact form styles */
 .contact-form {
-    background: #f8f9fa;
+    background: #222;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #444;
+    border-radius: 0;
+}
+
+.contact-form::before {
+    content: '# Contact Form';
+    display: block;
+    color: #00ff00;
+    margin-bottom: 1rem;
+    font-weight: bold;
 }
 
 .form-group {
@@ -246,23 +439,32 @@ main {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: #333;
+    color: #00ff00;
+}
+
+.form-group label::before {
+    content: '$ ';
+    color: #666;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 0.8rem;
-    border: 2px solid #e9ecef;
-    border-radius: 5px;
+    border: 1px solid #444;
+    border-radius: 0;
     font-size: 1rem;
+    font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+    background: #1a1a1a;
+    color: #f8f8f2;
     transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #00ff00;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .form-group textarea {
@@ -271,25 +473,31 @@ main {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: #333;
+    color: #00ff00;
     padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid #00ff00;
+    border-radius: 0;
     font-size: 1rem;
     font-weight: 500;
+    font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     width: 100%;
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
+    background: #00ff00;
+    color: #1a1a1a;
+}
+
+.submit-btn::before {
+    content: '> ';
 }
 
 /* Error message styles */
 .error-message {
-    color: #dc3545;
+    color: #ff5555;
     font-size: 0.9rem;
     margin-top: 0.5rem;
     display: none;
@@ -297,7 +505,7 @@ main {
 
 .form-group.error input,
 .form-group.error textarea {
-    border-color: #dc3545;
+    border-color: #ff5555;
 }
 
 .form-group.error .error-message {
@@ -306,16 +514,25 @@ main {
 
 /* Success message */
 .success-message {
-    background: #d4edda;
-    color: #155724;
+    background: #2d5a2d;
+    color: #00ff00;
     padding: 1rem;
-    border-radius: 5px;
+    border: 1px solid #00ff00;
+    border-radius: 0;
     margin-bottom: 1rem;
     display: none;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .terminal-header {
+        padding: 6px 12px;
+    }
+    
+    .terminal-title {
+        font-size: 12px;
+    }
+    
     .nav-container {
         flex-direction: column;
         gap: 1rem;
@@ -349,6 +566,10 @@ main {
     .container {
         padding: 0 1rem;
     }
+    
+    main {
+        margin-top: 100px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -367,6 +588,15 @@ main {
     .social-links {
         justify-content: center;
     }
+    
+    .terminal-buttons {
+        gap: 6px;
+    }
+    
+    .terminal-button {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 /* Smooth scrolling */
@@ -374,7 +604,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Loading animation */
+/* Loading animation - updated for terminal theme */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -384,4 +614,41 @@ html {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Additional terminal-style elements */
+.terminal-prompt::before {
+    content: '$ ';
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* Terminal scrollbar styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00ff00;
+}
+
+/* Selection styling */
+::selection {
+    background: #00ff00;
+    color: #1a1a1a;
+}
+
+/* Focus outline for accessibility */
+*:focus {
+    outline: 2px solid #00ff00;
+    outline-offset: 2px;
 }
